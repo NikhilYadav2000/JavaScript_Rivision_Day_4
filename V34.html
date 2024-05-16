@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Nikhil</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    // setInterval(()=>{
+    //     // console.log("Nikhil",Date.now());
+    // },1000)
+
+    // const sayDate=(str)=>{
+    //     console.log(str,Date.now());
+    // }
+    // setInterval(sayDate,1000,"hii")
+
+    // const sayDate=()=>{
+    // console.log("Nikhil",Date.now());
+    // }
+    // const clearInt = setInterval(sayDate, 1000);
+    // clearInterval(clearInt)
+    const sayDate = (str) => {
+      console.log(str, Date.now());
+    };
+    let interValId
+    document.querySelector("#start").addEventListener("click", () => {
+        interValId=setInterval(()=>{
+            sayDate("hii");
+        },1000);
+    });
+    document.querySelector("#stop").addEventListener("click", () => {
+        clearInterval(interValId)
+    });
+  </script>
+</html>

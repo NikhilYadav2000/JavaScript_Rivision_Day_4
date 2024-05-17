@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+     Similique animi, consectetur iure voluptatem possimus voluptatum molestias debitis
+      eum quo facere consequuntur, a odio!</p>
+</body>
+<script>
+    const xhr=new XMLHttpRequest();
+    xhr.open('GET',"https://api.github.com/user");
+    console.log(xhr.readyState); // check for state
+    xhr.onreadystatechange=()=>{
+        console.log(xhr.readyState); // check for state
+        if(xhr.readyState===4){
+            const data=JSON.parse(this.responseText); // response will come in string form mostly
+            console.log(typeof data);
+        }
+    }
+    xhr.send(); // open gets called when we use send()
+</script>
+</html>
